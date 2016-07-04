@@ -73,7 +73,7 @@ function show_error
 dlog "getting password..."
 PASSWORD=`security 2>&1 > /dev/null find-generic-password -gl perforce`
 if [[ $? -ne 0 ]]; then
-    show_error "No Perforce password found, please add it to your keychain."
+    log "No Perforce password found, add it to your keychain to login automatically."
     log "Trying to use p4 without password"
     #exit -1
 else
