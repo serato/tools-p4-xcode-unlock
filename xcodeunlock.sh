@@ -1,6 +1,8 @@
 #!/bin/bash
  
 ###
+#   1.6 - 27/10/2016 - Maxime Viargues
+#         Fix script not finding p4 on El Capitan
 #   1.5 - 04/07/2016 - Maxime Viargues
 #         Fixed hang on Xcode 7.
 #         Allow to not have a password in the keychain.
@@ -67,6 +69,9 @@ function show_error
 }
 
 #########################################################
+
+# Fix Xcode environment not having local/bin on ElCapitan
+PATH="/usr/local/bin:${PATH}"
 
 # Get the Perforce password from the keychain. Returns the following line:
 #password: "the password"
